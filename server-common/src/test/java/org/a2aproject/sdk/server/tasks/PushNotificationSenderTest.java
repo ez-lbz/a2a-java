@@ -543,7 +543,7 @@ public class PushNotificationSenderTest {
         String taskId = "task_send_crlf";
         Task taskData = createSampleTask(taskId, TaskState.TASK_STATE_COMPLETED);
         // CRLF in client-controlled credentials must not be injected into the Authorization
-        // header (BUG-34). The notification is dropped instead of sending an injected header.
+        // header. The notification is dropped instead of sending an injected header.
         TaskPushNotificationConfig config = TaskPushNotificationConfig.builder()
                 .url("http://notify.me/here")
                 .id("cfg-crlf")
